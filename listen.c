@@ -96,6 +96,8 @@ static void listener_cb(struct uloop_fd *fd, unsigned int events)
 		uh_block_listener(l);
 }
 
+#define TCP_FASTOPEN             23 /* Enable FastOpen on listeners */  //奇怪的是#include <netinet/tcp.h>有这个宏的定义，但是还是提示编译错误，这里把这个宏再复制定义一次
+
 void uh_setup_listeners(void)
 {
 	struct listener *l;
