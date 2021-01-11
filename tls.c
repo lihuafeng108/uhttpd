@@ -63,10 +63,12 @@ int uh_tls_init(const char *key, const char *crt, const char *ciphers)
 		return -EINVAL;
 	}
 
+	#if 0
 	if (ciphers && ops->context_set_ciphers(ctx, ciphers)) {
 		fprintf(stderr, "No recognized ciphers in cipher list\n");
 		return -EINVAL;
 	}
+	#endif
 
 	return 0;
 }
